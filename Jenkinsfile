@@ -18,6 +18,11 @@ pipeline{
                   }
               }
           }
+       stage('Check Terraform') {
+           steps {
+               sh 'which terraform'
+            }
+        }
        stage('fmt') {
            steps {
                sh 'pwd;cd terraform/ ; ls ; terraform fmt'
