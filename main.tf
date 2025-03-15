@@ -2,7 +2,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-
 # Crear una VPC
 resource "aws_vpc" "my_vpc" {
   cidr_block = "10.0.0.0/16"
@@ -42,7 +41,7 @@ resource "aws_security_group" "my_security_group" {
 }
 
 # Crear una instancia EC2 dentro de la VPC y Subnet
-resource "aws_instance" "foo" {
+resource "aws_instance" "test" {
   ami                    = "ami-0c55b159cbfafe1f0"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.my_security_group.id]
