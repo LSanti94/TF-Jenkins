@@ -11,7 +11,7 @@ pipeline{
         stage('checkout') {
             steps{
                 script{
-                    ls("terraform")
+                    dir("terraform")
                     {
                         git "https://github.com/LSanti94/TF-Jenkins.git"
                       }
