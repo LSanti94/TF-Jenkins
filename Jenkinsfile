@@ -20,7 +20,7 @@ pipeline{
           }
        stage('fmt') {
            steps {
-               sh 'pwd;cd terraform/ ; terraform fmt'
+               sh 'pwd;cd terraform/ ; ls ; terraform fmt'
            }
        }
        stage('plan') {
