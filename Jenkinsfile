@@ -18,19 +18,9 @@ pipeline{
                   }
               }
           }
-       stage('Install Terraform') {
-            steps {
-                sh '''
-                curl -O https://releases.hashicorp.com/terraform/1.0.11/terraform_1.0.11_linux_amd64.zip
-                unzip terraform_1.0.11_linux_amd64.zip
-                sudo mv terraform /usr/local/bin/
-                terraform --version
-                '''
-            }
-        }
        stage('fmt') {
            steps {
-               sh 'pwd;cd terraform/ ; ls ; terraform fmt'
+               sh 'pwd;cd terraform/ ; terraform fmt'
            }
        }
        stage('plan') {
