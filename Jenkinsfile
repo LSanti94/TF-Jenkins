@@ -30,7 +30,7 @@ pipeline {
         stage('autoApprove') {
             when {
                 not {
-                    equals expected true, actual: params.autoApprove
+                    equals expected: true, actual: params.autoApprove
                 }
             }
 
